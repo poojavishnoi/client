@@ -37,7 +37,7 @@ function Landing() {
     } else {
       navigate("/");
     }
-  }, [image, user, url]);
+  }, [image,navigate, user, url]);
 
   const uploadData = () => {
     fetch("http://localhost:5000/api/user/register", {
