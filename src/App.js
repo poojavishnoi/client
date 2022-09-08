@@ -5,7 +5,6 @@ import CreatePost from "./pages/CreatePost";
 import Home from "./pages/Home";
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
-import Bookmark from "./pages/Bookmark";
 import { Route, Routes } from "react-router-dom";
 import Profile from "./pages/Profile";
 import  UserProfile from "./pages/UserProfile";
@@ -21,7 +20,6 @@ function App() {
         <Route path="/login" element={<Login />} />              
         <Route path="/home" element={<Home />} />
         <Route path="/createPost" element={<CreatePost />} />
-        <Route path="/bookmark" element={<Bookmark />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/:userid" element={<UserProfile />} />
         <Route path="/myfollowerspost" element={<SubscribedUserPost />} />
