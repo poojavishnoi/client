@@ -11,7 +11,7 @@ function UserProfile() {
   const [showFollow, setShowFollow] = useState(user?!user.following.includes(userid): true)
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/user/profile/${userid}`, {
+    fetch(`https://neosocial-app.herokuapp.com/api/user/profile/${userid}`, {
       method: "get",
       headers: {
         "auth-token": localStorage.getItem("jwt"),
@@ -25,7 +25,7 @@ function UserProfile() {
   }, [userid]);
 
   const followUser = () => {
-    fetch("http://localhost:5000/api/user/follow", {
+    fetch("https://neosocial-app.herokuapp.com/api/user/follow", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +57,7 @@ function UserProfile() {
   };
 
   const unFollowUser = () => {
-    fetch("http://localhost:5000/api/user/unfollow", {
+    fetch("https://neosocial-app.herokuapp.com/api/user/unfollow", {
       method: "put",
       headers: {
         "Content-Type": "application/json",

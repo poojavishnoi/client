@@ -36,7 +36,7 @@ function CreatePost() {
   }, [image]);
 
   const postDetails = () => {
-    fetch("http://localhost:5000/api/posts/createpost", {
+    fetch("https://neosocial-app.herokuapp.com/api/posts/createpost", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
