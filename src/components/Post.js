@@ -175,11 +175,13 @@ function Post({
                 setNewComment(e.target.value);
               }}
               placeholder="Add comment.."
+              value={newComment}
             />
             <button
               onClick={(e) => {
                 e.preventDefault();
                 makeComment(newComment, id);
+                setNewComment("")
               }}
               className="comment_btn"
             >
