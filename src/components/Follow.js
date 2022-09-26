@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/auth-context";
+import { useNavigate } from "react-router-dom";
 
 function Follow({ followUser }) {
   const currentUser = JSON.parse(localStorage.getItem("user"));
   const { dispatch } = useAuth();
+  const navigate = useNavigate();
+
+
   const [showFollow, setShowFollow] = useState(
     currentUser ? !currentUser.following.includes(followUser._id) : true
   );
@@ -53,10 +57,21 @@ function Follow({ followUser }) {
       .catch((err) => console.log(err));
   };
 
+  const clickHandler = () => {
+    let url;
+    if (currentUser._id !== followUser._id) {
+      url = `/profile/${followUser._id}`;
+    } else {
+      url = `/profile`;
+    }
+    navigate(url);
+  };
+
+
   return (
     <div className="follow_person">
-      <img className="profile_img" src={followUser.pic} alt=""></img>
-      <div className="profile_name">
+      <img className="profile_img"   src={followUser.pic} alt=""></img>
+      <div className="profile_name" style={{cursor:"pointer"}} onClick={clickHandler}>
         <span className="fullname">{followUser.name}</span>
         <div className="username">{followUser.email}</div>
       </div>
