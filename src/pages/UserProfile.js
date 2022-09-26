@@ -24,6 +24,7 @@ function UserProfile() {
       .catch((err) => console.log(err));
   }, [userid]);
 
+
   const followUser = () => {
     fetch("https://neosocial-app.herokuapp.com/api/user/follow", {
       method: "put",
@@ -89,7 +90,6 @@ function UserProfile() {
       .catch((err) => console.log(err));
   };
 
-  
 
   return (
     <>
@@ -99,7 +99,7 @@ function UserProfile() {
             <div>
               <img
                 className="profile_image"
-                src="https://pbs.twimg.com/profile_images/1371418693289177090/F64G0YJL_400x400.jpg"
+                src={userData.user.pic}
                 alt=""
               ></img>
             </div>
@@ -125,9 +125,9 @@ function UserProfile() {
               </div>
               <div className="profile_desc">
                 <h4>{userData.user.email}</h4>
-                <span className="profile_caption">
+                {/* <span className="profile_caption">
                   I am in love with sunsets ❤️
-                </span>
+                </span> */}
               </div>
               {
                 showFollow ? 

@@ -22,6 +22,8 @@ function Profile() {
   },[])
 
   const updateProfilePic = () => {
+
+    console.log("asasas");
     if(image){ 
     const data = new FormData();
     data.append("file", image);
@@ -86,11 +88,11 @@ function Profile() {
           </div>
           <div className="profile_desc">
             <h4>{user.email}</h4>
-            <span className="profile_caption">
+            {/* <span className="profile_caption">
               I am in love with sunsets ❤️
-            </span>
+            </span> */}
           </div>
-          <span><button onClick={() =>updateProfilePic()} className="flw_btn">
+          <span><button onClick={updateProfilePic} className="flw_btn">
             Update Pic
           </button></span>
           <input
@@ -120,11 +122,7 @@ function Profile() {
         ></img>
           )
         })
-      }
-        
-        
-       
-        
+      } 
       </div>
     </div> : "loading"}
     </>
