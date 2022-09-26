@@ -1,5 +1,3 @@
-
-
 .profile_main_container{
   margin: 1% 17%;
   padding: 1% 5%;
@@ -10,7 +8,12 @@
   height: 15rem;
   width: 15rem;
   object-fit: cover;
-  border-radius: 1rem;
+  padding:1rem;
+  border-radius: 50%;
+}
+
+.profile_post:last-child {
+  margin-bottom: 6rem;
 }
 
 .profile_details{
@@ -18,7 +21,6 @@
   margin: 0 1rem;
   text-align: left;
   padding: 2% 1%;  
-
 }
 
 .profile_username{
@@ -55,7 +57,7 @@
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  width: 8rem;
+  min-width: 7rem;
   background-color: #ff7474;
 }
 
@@ -70,7 +72,7 @@
 .profile_post{
   margin: 1rem;
   max-width: 20rem;
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   padding: 1rem;
   aspect-ratio: 3/4;
   min-height: 10%;
@@ -104,6 +106,11 @@
   .profile_posts{
     margin: 1% 1%;
   }
+
+  .profile_main_container .profile_image{
+    height: 13rem;
+    width: 13rem;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -117,6 +124,11 @@
   }
   .profile_post{
     max-width: 40%;
+  }
+
+  .profile_main_container .profile_image{
+    height: 11rem;
+    width: 11rem;
   }
 }
 
@@ -137,8 +149,8 @@
   }
 
   .profile_main_container .profile_image{
-    height: 5rem;
-    width: 5rem;
+    height: 8rem;
+    width: 8rem;
     border-radius: 50%;
   }
 

@@ -102,11 +102,11 @@ img{
 }
 
 .follow_person{
-  margin-bottom: 1rem;
+  margin: 0 1rem;
   display:flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0 1rem 0 0;
+  padding: 0.5rem;
 }
 
 .username{
@@ -135,19 +135,20 @@ img{
 .follow_container .profile_img{
   margin-right: 0.7rem;
   object-fit: cover;
+  aspect-ratio: 2;
 }
+
 .profile_name{
-  min-width: 10vw;
+  min-width:18vw;
 }
 
 .follow_container{
   background-color: white;
   max-height: 32vh;
-  min-width: 18vw;
+  min-width: 15vw;
   overflow-x: hidden;
   text-align: left;
-  padding-top: 1rem;
-  padding-left: 1rem;
+  padding: 1rem 2rem;
   margin-left: 1rem;
 }
 
