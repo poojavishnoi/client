@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 
 }
 
@@ -75,7 +76,7 @@
     margin: 0;
     font-size: 0.7rem;
     border-bottom: 1px solid gray;
-    /* width: min-content; */
+    width: auto;
   }
 
   .header_links button{
@@ -84,7 +85,6 @@
     border-radius: 0.5rem;
     background-color: #ff7474;
   }
-
 
   .icon{
     height: 1.6rem;
@@ -100,7 +100,7 @@
   }
 
   .header_links li{
-    margin-left: 1rem;
+    margin-left: 0.5rem;
   }
 
   .header_search{
