@@ -5,6 +5,7 @@
   background-color: rgb(242, 242, 242);
 }
 
+
 .common{
   border-radius: 1rem;
 }
@@ -45,6 +46,20 @@ img{
   border-bottom: 1px solid lightgray;
 }
 
+.comment_section{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.comment_section_full{
+  display: block;
+}
+
+.no_select {
+  -webkit-tap-highlight-color: transparent;} 
+
 .dlt_btn{
   cursor: pointer;
 }
@@ -69,12 +84,11 @@ img{
 }
 
 .comment_btn{
-  color: #ff7474;
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem 0.7rem;
   border: none;
+  margin: 0.5rem 0;
   border-radius: 0.5rem;
   background-color: rgb(241, 241, 241);
-  font-size: 1.1rem;
 }
 
 .post_container{
