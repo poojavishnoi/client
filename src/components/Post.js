@@ -20,8 +20,14 @@ function Post({
   const [updatedLikes, setUpdatedLikes] = useState(likes);
   const [newComment, setNewComment] = useState("");
   const [updatedComment, setUpdatedComment] = useState(comments);
+  const [showComments, setShowComments] = useState(false);
   const navigate = useNavigate();
 
+  const showCommentHandler = () => {
+    setShowComments(!showComments);
+  }
+
+  console.log(comments);
   const likePost = (id) => {
     fetch("https://neosocial-app.herokuapp.com/api/posts/like", {
       method: "put",
@@ -74,12 +80,15 @@ function Post({
   };
 
   const deletePost = (postId) => {
-    fetch(`https://neosocial-app.herokuapp.com/api/posts/deletepost/${postId}`, {
-      method: "delete",
-      headers: {
-        "auth-token": localStorage.getItem("jwt"),
-      },
-    })
+    fetch(
+      `https://neosocial-app.herokuapp.com/api/posts/deletepost/${postId}`,
+      {
+        method: "delete",
+        headers: {
+          "auth-token": localStorage.getItem("jwt"),
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -122,10 +131,12 @@ function Post({
               ""
             )}
           </div>
+
           <div className="post_img">
             <img className="post_img image" src={image} alt="post_pic"></img>
           </div>
-          <div className="post_icons">
+
+          <div className="post_icons no_select">
             <div className="left_icons">
               {updatedLikes.includes(user._id) ? (
                 <AiFillHeart
@@ -153,19 +164,30 @@ function Post({
             <span>{updatedLikes.length} likes</span>
             <br />
             {caption}
-            {updatedComment.map((item) => {
-              return (
-                <div key={item._id}>
-                  {item.postedBy ? (
-                    <p>
-                      <b> {item.postedBy.name}</b> {item.text}
-                    </p>
-                  ) : (
-                    ""
-                  )}
-                </div>
-              );
-            })}
+            <div className={showComments ? "comment_section_full" : "comment_section"}>
+              {updatedComment.map((item) => {
+                return (
+                  <div key={item._id}>
+                    {item.postedBy ? (
+                      <p>
+                        <b> {item.postedBy.name}</b> {item.text}
+                      </p>
+                    ) : (
+                      ""
+                    )}
+                      
+                    
+                  </div>
+                );
+              })}
+
+            </div>
+            {
+              comments.length > 1 ?
+            <button onClick={showCommentHandler} className='comment_btn'>
+            {showComments ? "Hide Comments" : "Load more comments"}
+            </button> :<></>
+            }
           </div>
 
           <div className="post_comment">
@@ -181,9 +203,9 @@ function Post({
               onClick={(e) => {
                 e.preventDefault();
                 makeComment(newComment, id);
-                setNewComment("")
+                setNewComment("");
               }}
-              className="comment_btn"
+              className="flw_btn"
             >
               comment
             </button>
