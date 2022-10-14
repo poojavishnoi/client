@@ -19,18 +19,9 @@ a{
 }
 
 @media only screen and (max-width: 600px) {
-  .footer_container{
-    font-size: 0.7rem;
-  }
-  .footer_container h3 {
-    margin-top: 0.5rem;
-  }
 
-  .footer_icon{
-    /* margin: 0.5rem; */
-    color: white;
-    height: 1.3rem;
+  .footer_container{
+    display: none;
   }
-  
 
 }
