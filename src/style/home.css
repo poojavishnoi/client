@@ -245,6 +245,10 @@ img{
   .comment_btn{
     font-size: 0.7rem;
   }
+
+  .post_main_container:last-child {
+    margin-bottom: 1rem;
+  }
 }
 
 
