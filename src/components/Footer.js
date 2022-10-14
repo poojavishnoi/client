@@ -18,21 +18,21 @@ function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          <AiFillGithub className="footer_icon" size="2rem" />
+          <AiFillGithub className="footer_icon" size="1.5rem" />
         </a>
         <a
           href="https://www.linkedin.com/in/pooja-vishnoi-678873206/"
           target="_blank"
           rel="noreferrer"
         >
-          <AiFillLinkedin className="footer_icon" size="2rem" />
+          <AiFillLinkedin className="footer_icon" size="1.5rem" />
         </a>
         <a
           href="https://twitter.com/PoojaVishnoi29"
           target="_blank"
           rel="noreferrer"
         >
-          <AiFillTwitterCircle className="footer_icon" size="2rem" />
+          <AiFillTwitterCircle className="footer_icon" size="1.5rem" />
         </a>
       </div>
     </div>
